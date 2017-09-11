@@ -155,12 +155,6 @@
 	}
 </script> -->
 <!-- <script>
-    fn();
-	function fn(){
-		alert(1)
-	}
-</script> -->
-<!-- <script>
 	var arr=[1,2,3,4,5,6,7,8];
 	push(arr,'a','b','c');
 	function push(arr){
@@ -212,14 +206,6 @@
         	}
         }
         console.log(arr)
-	}
-</script> -->
-<!-- <script>
-	var arr=[7,5,6,4,3,2,1];
-	function some(arr,num){
-		for(var i=0;i<arr.length;i++){
-
-		}
 	}
 </script> -->
 <!-- <script>
@@ -296,12 +282,165 @@
 	function map(arr,fn){
 		var newarr=[];
 		for(i=0;i<arr.length;i++){
-			if(fn(arr[i])== true){
+			if(fn(arr[i])){
 			newarr[newarr.length]=arr[i];
 			}
 		}
 		return newarr;
 	}
 </script> -->
+<!-- 找元素第一个位置 -->
+<!-- <script>
+	var arr=[1,6,1,0,4,1,6,0];
+	var ss=all(arr,0);
+	console.log(ss);
+	function all(arr,num){
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]==num){
+				return i
+			}	
+		}
+		return false
+	}
+</script> -->
+<!-- 任意元素所在位置 -->
+<!-- <script>
+	var arr=[1,6,1,0,4,1,6,0];
+	var ss=all(arr,0);
+	console.log(ss);
+	function all(arr,num){
+		for(var i=arr.length-1;i>-1;i--){
+			if(arr[i]==num){
+				return i
+			}	
+		}
+		return false
+	}
+</script> -->
+<!-- 反转 -->
+<!-- <script>
+	var arr=[1,6,1,0,4,1,6,0];
+	console.log(result(arr));
+	function result(arr){
+		var newarr=[];
+		for(i=arr.length-1;i>-1;i--){
+             push(newarr,arr[i]);
+		}
+		return newarr;
+	}
+
+	function push(arr,...rest){
+		for(var i=0;i<rest.length;i++){
+		arr[arr.length]=rest[i];
+		}
+	}
+</script>
+ -->
+ <!-- 在任意位置减去多少个元素 -->
+ <!-- <script>
+ 	var arr=[1,6,1,0,4,1,6,0];
+ 	console.log(spliceminus(arr,3,1));    
+ 	function spliceminus(arr,pos,num){
+ 		var newarr=[];
+ 		for(var i=0;i<arr.length;i++){
+ 			if(pos<=i && i<(pos+num)){
+ 				continue;
+ 			}
+ 			newarr[newarr.length]=arr[i];
+ 		}
+ 		return newarr;
+ 	}
+ </script>	 -->
+
+ <!-- 在任意位置加任意元素 -->
+ <!-- <script>
+ 	var arr=[1,6,1,0,4,1,6,0];
+ 	console.log(spliceplus(arr,2,5,6,));
+ 	function spliceplus(arr,pos,...rest){
+ 		var newarr=[];
+ 		for(var i=0;i<pos;i++){
+ 			newarr[newarr.length]=arr[i];
+ 		}
+ 		for(var i=0;i<rest.length;i++){
+ 			newarr[newarr.length]=rest[i];
+ 		}
+ 		for(var i=pos;i<arr.length;i++){
+ 			newarr[newarr.length]=arr[i];
+ 		}
+ 		return newarr;
+ 	}
+ 	</script> -->
+ 	<script src="index.js"></script>
+ <!-- <script>
+ var arr=[1,6,1,0,4,1,6,0];
+ var assss=splice(arr,2,3,5,5, );
+ console.log(assss);
+ </script> -->
+ <!-- <script>  
+    var arr=[1,6,1,0,4,1,6,];
+    //地 址（浅拷贝）
+    var arr1=arr;
+    for(var i=1;i<arr.length;i++){
+    	arr1[i]=arr[i]
+    }
+    //传 值（深拷贝）
+    var arr1=[];
+    for(var i=1;i<arr.length;i++){
+    	arr1[i]=arr[i];
+    }
+ </script> -->
+ <script>
+ 	var arr=[1,6,1,0,['s','c','a']];
+ 	var arr1=copy(arr);
+ 	console.log(arr1);
+ 	function copy(arr){
+ 		var newarr=[];
+		for(var i=0;i<arr.length;i++){
+ 		if(typeof arr[i]=='object'){
+ 			newarr[i]=copy(arr[i]);
+ 		}else{
+ 			newarr[i]=arr[i];
+ 		}
+ 		
+ 	  }
+ 	  return newarr;
+ 	}
+ </script>
+ <script>
+ 	alert(num1); //暂时性的死区
+ 	let num1;
+ 	num1=10;
+ 	alert(num1);
+
+
+ 	{   //块级作用域
+ 	  let num=10;
+ 	  console.log(num);
+ 	}
+
+ </script>
+ <script>
+    //内置顶层函数
+ 	// console.log(escape('张三'));
+ 	// console.log(unescape('%u5F20%u4E09'));
+ 	// console.log(Number('123'));
+  //   console.log(Boolean(false));
+  //   console.log(parseInt('000b'));
+  //   console.log(isNaN('abc'))
+  //   console.log(Number('0b1111'));
+   function person(){
+
+   };
+   let zhangsan= new person();
+   let lisi = new person();
+   //添加属性 方法
+   //谁 什么 等于
+   zhangsan.age=18;
+   zhangsan.name='zhangsan';
+   //访问
+   //谁 什么
+   console.log(zhangsan.name);
+ </script>
+ 	
 </body>
 </html>
